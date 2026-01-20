@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Womens-bottoms</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .nav-container {
+            display: flex;
+            background-color: #333;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right:10px;
+        }
+
+        .nav-item {
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .nav-item:hover {
+            background-color: #555;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 32px;
+            padding: 30px 0;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 150px;
+        }
+
+        .bottom-card {
+            box-sizing: border-box;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .bottom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .bottom-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .bottom-info {
+            padding: 15px;
+        }
+
+        .bottom-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .bottom-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e91e63;
+            margin-bottom: 12px;
+        }
+
+        .select-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .select-btn:hover {
+            background-color: #555;
+        }
+        .action-button{
+            display:flex;
+            gap:40px;
+        }
+        .outfit-btn{
+            background-color: greenyellow;
+            padding:12px;
+            color:black;
+            cursor:pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .pay-btn{
+            background-color: greenyellow;
+            padding:12px;
+            color:black;
+            cursor:pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            
+        }
+        /* Overlay: dims & blurs background */
+        .outfit {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+  
+          background: rgba(0, 0, 0, 0.5); /* dim */
+          backdrop-filter: blur(4px);      /* blur */
+  
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+          z-index: 1000;
+        }
+
+        /* Show modal */
+        .outfit.active {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        /* Modal box */
+        .outfitDisplay{
+          background: #fff;
+          padding: 20px 25px;
+          border-radius: 10px;
+          width: 350px;
+          max-width: 90%;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+          text-align: center;
+          animation: slideDown 0.3s ease;
+        }
+        /* Button styling */
+        .outfitDisplay-button {
+          margin-top: 15px;
+          padding: 8px 15px;
+          border: none;
+          border-radius: 6px;
+          background: #4CAF50;
+          color: #fff;
+          cursor: pointer;
+          
+        }
+        .outfitDisplay button:hover {
+          background: #45a049;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+            <a href="HTML1.html" class="nav-item ">Home</a>
+            <a href="tops.html" class="nav-item">Tops</a>
+            <a href="bottoms.html"class="nav-item" >Bottoms</a>
+    </div>
+    <h1 class="page-title">Bottoms</h1>
+
+    <div class="container">
+        <div class="bottom-grid">
+            <div class="bottom-card">
+                <img src="https://images.pexels.com/photos/32166801/pexels-photo-32166801.jpeg" alt="Top 1" class="bottom-image">
+                <div class="bottom-info">
+                    <div class="bottom-name">Stylish black jeans</div>
+                    <div class="bottom-price">₹500</div>
+                    <button class="select-btn"id="bottom1"data-name="Stylish black jeans"data-price="₹500">Select</button>
+                    <div class="action-button" style="display: none;">
+                        
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-card">
+                <img src="https://images.pexels.com/photos/9291843/pexels-photo-9291843.jpeg" alt="Top 2" class="bottom-image">
+                <div class="bottom-info">
+                    <div class="bottom-name">Elegant black bottom</div>
+                    <div class="bottom-price">₹700</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-card">
+                <img src="https://images.pexels.com/photos/9291842/pexels-photo-9291842.jpeg" alt="Top 3" class="bottom-image">
+                <div class="bottom-info">
+                    <div class="bottom-name">high waist bottom</div>
+                    <div class="bottom-price">₹589</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-card">
+                <img src="https://images.pexels.com/photos/17896125/pexels-photo-17896125.jpeg" alt="Top 4" class="bottom-image">
+                <div class="bottom-info">
+                    <div class="bottom-name">chic bottom</div>
+                    <div class="bottom-price">₹449</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-card">
+                <img src="https://images.pexels.com/photos/31444312/pexels-photo-31444312.jpeg" alt="Top 5" class="bottom-image">
+                <div class="bottom-info">
+                    <div class="bottom-name">comfy bottoms</div>
+                    <div class="bottom-price">₹430</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                       
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-card">
+                <img src="https://images.pexels.com/photos/9901666/pexels-photo-9901666.jpeg" alt="Top 6" class="bottom-image">
+                <div class="bottom-info">
+                    <div class="bottom-name">red track pants</div>
+                    <div class="bottom-price">₹300</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   
+    <div class="outfit" id="outfitModal">
+      <div class="outfitDisplay" id="outfitDisplay">
+        <button onclick="closeModal()">Pay</button>
+      </div>
+    </div>
+
+    <script>
+       
+       const selectedTop = JSON.parse(localStorage.getItem('selectedTop'));
+        // Handle all select buttons
+        document.querySelectorAll(".select-btn").forEach((btn) => {
+            btn.addEventListener("click", function() {
+                // Get the card data
+                const card = btn.closest(".bottom-card");
+                const image = card.querySelector(".bottom-image").src;
+                const name = card.querySelector(".bottom-name").textContent;
+                const price = card.querySelector(".bottom-price").textContent;
+                
+                // Save selected bottom to localStorage
+                const selectedBottom = {
+                    image: image,
+                    name: name,
+                    price: price
+                };
+                localStorage.setItem('selectedBottom', JSON.stringify(selectedBottom));
+                const options = card.querySelector(".action-button");
+                options.style.display = options.style.display === "none" ? "flex" : "none";
+                
+               
+                
+            });
+        });
+        document.querySelectorAll(".pay-btn").forEach((btn)=>{
+            btn.addEventListener("click",function(){
+               const top = JSON.parse(localStorage.getItem("selectedTop"));
+               const bottom = JSON.parse(localStorage.getItem("selectedBottom"));
+               if (!top) {
+                alert("Please select a top to complete the outfit before payment.");
+                return;
+               }
+
+               const topPrice = parseInt(top.price.replace('₹', ''));
+               const bottomPrice = parseInt(bottom.price.replace('₹', ''));
+               const total = topPrice + bottomPrice;
+
+               const display = document.getElementById("outfitDisplay");
+                display.innerHTML = `
+                  <h2>Yay!! Outfit Completed 🎉</h2>
+                  <img src="${top.image}" width="120">
+                  <p>${top.name} - ${top.price}</p>
+
+                  <img src="${bottom.image}" width="120">
+                  <p>${bottom.name} - ${bottom.price}</p>
+                  <h3 id="totalPrice">Total: ₹${total}</h3>
+
+
+                  <button onclick="closeModal()">Pay</button>
+                `;
+                document.getElementById("outfitModal").classList.add("active");
+            });
+        });
+        function closeModal() {
+            document.getElementById("outfitModal").classList.remove("active");
+            localStorage.removeItem("selectedTop");
+            localStorage.removeItem("selectedBottom");
+        }
+    </script>
+    
+</body>
+</html>
+
+        
+            
+          

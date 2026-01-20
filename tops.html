@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Womens-top</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .nav-container {
+            display: flex;
+            background-color: #333;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right:10px;
+        }
+
+        .nav-item {
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .nav-item:hover {
+            background-color: #555;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 32px;
+            padding: 30px 0;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .top-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 150px;
+        }
+
+        .top-card {
+            box-sizing: border-box;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            height:auto;
+        }
+
+        .top-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .top-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .top-info {
+            padding: 15px;
+        }
+
+        .top-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .top-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e91e63;
+            margin-bottom: 12px;
+        }
+
+        .select-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .select-btn:hover {
+            background-color: #555;
+        }
+        .action-button{
+            display:flex;
+            gap:40px;
+        }
+        .outfit-btn{
+            background-color: greenyellow;
+            padding:12px;
+            color:black;
+            cursor:pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .pay-btn{
+            background-color: greenyellow;
+            padding:12px;
+            color:black;
+            cursor:pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            
+        }
+        .outfit {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+  
+          background: rgba(0, 0, 0, 0.5); /* dim */
+          backdrop-filter: blur(4px);      /* blur */
+  
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+          z-index: 1000;
+          overflow: auto;
+        }
+         /* Show modal */
+        .outfit.active {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        /* Modal box */
+        .outfitDisplay{
+          background: #fff;
+          padding: 20px 25px;
+          border-radius: 10px;
+          width: 350px;
+          max-width: 90%;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+          text-align: center;
+          margin: auto;
+        }
+        /* Button styling */
+        .outfitDisplay-button {
+          margin-top: 15px;
+          padding: 8px 15px;
+          border: none;
+          border-radius: 6px;
+          background: #4CAF50;
+          color: #fff;
+          cursor: pointer;
+          
+        }
+        .outfitDisplay button:hover {
+          background: #45a049;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+
+    <div class="nav-container">
+            <a href="HTML1.html" class="nav-item ">Home</a>
+            <a href="tops.html" class="nav-item">Tops</a>
+            <a href="bottoms.html"class="nav-item" >Bottoms</a>
+    </div>
+    <h1 class="page-title">Tops</h1>
+
+    <div class="container">
+        <div class="top-grid">
+            <div class="top-card">
+                <img src="https://images.pexels.com/photos/14990381/pexels-photo-14990381.jpeg" alt="Top 1" class="top-image">
+                <div class="top-info">
+                    <div class="top-name">Stylish black Top</div>
+                    <div class="top-price">₹499</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        <button class="outfit-btn">Complete Outfit</button>
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-card">
+                <img src="https://images.pexels.com/photos/28259757/pexels-photo-28259757.jpeg" alt="Top 2" class="top-image">
+                <div class="top-info">
+                    <div class="top-name">Casual pattern Top</div>
+                    <div class="top-price">₹599</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        <button class="outfit-btn">Complete Outfit</button>
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-card">
+                <img src="https://images.pexels.com/photos/1980103/pexels-photo-1980103.jpeg" alt="Top 3" class="top-image">
+                <div class="top-info">
+                    <div class="top-name">floral grey Top</div>
+                    <div class="top-price">₹699</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        <button class="outfit-btn">Complete Outfit</button>
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-card">
+                <img src="https://images.pexels.com/photos/2363825/pexels-photo-2363825.jpeg" alt="Top 4" class="top-image">
+                <div class="top-info">
+                    <div class="top-name">Summer Floral Top</div>
+                    <div class="top-price">₹549</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        <button class="outfit-btn">Complete Outfit</button>
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-card">
+                <img src="https://images.pexels.com/photos/6256247/pexels-photo-6256247.jpeg" alt="Top 5" class="top-image">
+                <div class="top-info">
+                    <div class="top-name">Trendy Crop Top</div>
+                    <div class="top-price">₹799</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        <button class="outfit-btn">Complete Outfit</button>
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-card">
+                <img src="https://images.pexels.com/photos/10326829/pexels-photo-10326829.jpeg" alt="Top 6" class="top-image">
+                <div class="top-info">
+                    <div class="top-name">Classic White Shirt</div>
+                    <div class="top-price">₹449</div>
+                    <button class="select-btn">Select</button>
+                    <div class="action-button" style="display: none;">
+                        <button class="outfit-btn">Complete Outfit</button>
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="outfit" id="outfitModal">
+      <div class="outfitDisplay" id="outfitDisplay">
+        <button onclick="closeModal()">Pay</button>
+      </div>
+    </div>
+   
+
+            
+    <script>
+        
+        document.querySelectorAll(".select-btn").forEach((btn) => {
+           btn.addEventListener("click", () => {
+            const card = btn.closest(".top-card");
+            const top={
+                image:card.querySelector(".top-image").src,
+                name:card.querySelector(".top-name").textContent,
+                price:card.querySelector(".top-price").textContent,
+            };
+            
+            localStorage.setItem('selectedTop', JSON.stringify(top));
+            //hide all action buttons first
+            document.querySelectorAll(".action-button").forEach(ab => {
+              ab.style.display = "none";
+            });
+            //show this card,s action button
+            const options = card.querySelector(".action-button");
+            options.style.display = "flex";
+           });
+        });   
+        // Handle "Complete Outfit" button clicks
+        document.querySelectorAll(".outfit-btn").forEach((btn) => {
+        btn.addEventListener("click", function() {
+            // Navigate to bottoms.html
+            window.location.href = "bottoms.html";
+           });
+        });
+    
+    // Handle "Pay" button clicks
+        document.querySelectorAll(".pay-btn").forEach((btn) => {
+        btn.addEventListener("click", function() {
+            const top = JSON.parse(localStorage.getItem("selectedTop"));
+            if (!top) {
+             alert("Please select a top first!");
+             return;
+            }
+           const bottom = JSON.parse(localStorage.getItem("selectedBottom"));
+           let total = parseInt(top.price.replace('₹',''));
+           let content = `
+            <img src="${top.image}" width="120">
+            <p>${top.name} - ${top.price}</p>
+           `;                  
+
+           if(bottom){
+            total += parseInt(bottom.price.replace('₹',''));
+            content += `
+                <img src="${bottom.image}" width="120">
+                <p>${bottom.name} - ${bottom.price}</p>
+            `;
+            }
+
+           content += `<h3>Total: ₹${total}</h3>
+                    <button onclick="closeModal()">Pay</button>`;
+
+          document.getElementById("outfitDisplay").innerHTML = content;
+          document.getElementById("outfitModal").classList.add("active");
+        });
+    });
+
+// Close modal
+    function closeModal(){
+        document.getElementById("outfitModal").classList.remove("active");
+        localStorage.removeItem("selectedTop");
+        localStorage.removeItem("selectedBottom");
+    }
+
+</script>
+            
+            
+        
+    
+</body>
+</html>

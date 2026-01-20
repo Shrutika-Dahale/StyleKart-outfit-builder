@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>StyleKart</title>
+    </head>
+    <style>
+        
+        .flex-container{
+            display:flex;
+            background-color:black;
+            padding:10px;
+            margin-left:10px;
+            margin-right:10px;
+        }
+        .flex-name {
+            color: blue;
+            font-size: 50px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-right: 200px; /* spacing between search and name */
+        }  
+        
+        .flex-search input[type="search"] {
+            padding: 12px 8px;
+            font-size: 14px;
+            text-align: left;
+            margin-top: 12.5;
+            margin-bottom:12.5;
+            width:450px;
+            background-color: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+            border: 1px solid #ccc;
+        }
+        .flex-search button {
+            padding: 12px 8px;
+            font-size: 14px;
+            margin-left: 2px;
+            text-align: center;
+            margin-top:12.5px;
+            margin-bottom:12.5px;
+            background-color: #666;
+            color: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+            border: none;
+        }
+        .nav-container {
+            display: flex;
+            background-color: #333;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right:10px;
+        }
+
+        .nav-item {
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .nav-item:hover {
+            background-color: #555;
+        }
+
+        .grid-rows{
+            display:grid;
+            margin-top:80px;
+            margin-left:10px;
+        }
+        
+        .grid-row-box{
+            display: grid;
+            grid-template-columns: repeat(3, 5cm); /* 3 boxes in one row */
+            gap: 50px;
+            column-gap: 190px;
+        }
+        
+         
+        .grid-box{
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            height:7cm;
+            width:7cm;
+            box-sizing: border-box;
+            position:relative;
+        }
+        .grid-box:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .grid-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        
+        .caption{
+            position: absolute;
+            z-index: 10;
+            text-align: center;
+            bottom: 0;
+            left:0;
+            right:0;
+            font-size: 16px;
+            font-weight: bold;
+            color:black;
+            background-color: aliceblue;
+            padding: 20px;
+        }
+    </style>
+    <body>
+        <div class="flex-container">
+            <div class="flex-name">StyleKart</div>
+            <div class="flex-search">
+                <input type="search"placeholder="Search here"disabled>
+                <button disabled>Search </button>
+            </div>
+        </div>
+        <div class="nav-container">
+            <a href="HTML1.html" class="nav-item ">Home</a>
+            <a href="tops.html" class="nav-item">Tops</a>
+            <a href="bottoms.html"class="nav-item" >Bottoms</a>
+        </div>
+        
+        <div class="grid-rows">
+		    <div class="grid-row-box">
+                <div class="grid-box">
+                        <img src="https://images.pexels.com/photos/31686703/pexels-photo-31686703.jpeg">
+                        <div class="caption">Womens</div>
+                </div>
+                        
+                    <a href="tops.html" class="grid-link">
+                        <div class="grid-box">
+                            <img src="https://images.pexels.com/photos/18091524/pexels-photo-18091524.jpeg">
+                            <div class="caption">Tops</div>
+                        </div>
+                    </a>
+
+                    <a href="bottoms.html"class="grid-link">
+                        <div class="grid-box">
+                            <img src="https://images.pexels.com/photos/28516158/pexels-photo-28516158.jpeg">
+                            <div class="caption">Bottoms</div>
+                        </div>
+                    </a>
+            </div>  
+        </div>
+        <footer style="background-color: #585656; color: white; text-align: center; padding: 0.05px; margin-top: 165px;">
+            <p>&copy; 2026 StyleKart. All rights reserved.</p>
+        </footer>
+    
+    </body>
+</html>
